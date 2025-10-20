@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import { translations } from "./utils/translation";
 import ContactForm from "./component/ContactForm";
 
