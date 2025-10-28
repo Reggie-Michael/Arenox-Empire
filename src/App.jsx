@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Toaster } from "react-hot-toast";
 import { translations } from "./utils/translation";
 import ContactForm from "./component/ContactForm";
+import { useAutoLang } from "./hooks/useAutoLang";
 
 const Header = ({ isDark, toggleTheme, lang, toggleLang }) => {
   const t = translations[lang];
@@ -267,7 +268,8 @@ const Footer = ({ isDark, lang }) => {
 };
 
 export default function ArenoxLanding() {
-  const [lang, setLang] = useState(localStorage.getItem("useLang") ?? "fr");
+  const [lang, setLang] = useAutoLang();
+
   const [isDark, setIsDark] = useState(
     localStorage.getItem("useTheme") ?? false
   );
