@@ -39,7 +39,7 @@ const Hero = ({ isDark, lang }) => {
   const t = translations[lang].hero;
   return (
     <section
-      className={`min-h-screen flex items-center justify-center text-center px-6 pt-32 pb-20 relative overflow-hidden ${isDark ? "bg-slate-950" : "bg-white"}`}
+      className={`min-h-[90dvh] flex items-center justify-center text-center px-6 pt-32 pb-20 relative overflow-hidden ${isDark ? "bg-slate-950" : "bg-white"}`}
     >
       <div
         className={`absolute inset-0 ${isDark ? "bg-gradient-radial from-purple-900/20 via-transparent to-transparent opacity-50 animate-pulse" : "bg-gradient-radial from-indigo-50 via-transparent to-transparent opacity-70"}`}
