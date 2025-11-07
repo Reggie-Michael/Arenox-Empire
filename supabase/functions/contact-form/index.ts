@@ -18,7 +18,7 @@ serve(async (req) => {
 
   try {
     const body = await req.json();
-    const { name, email, phone, issue, brief, details } = body;
+    const { name, email, phone, details } = body;
 
     // Supabase client
     const supabase = createClient(
@@ -29,10 +29,10 @@ serve(async (req) => {
     // Save contact message
     await supabase
       .from("contact_messages")
-      .insert([{ name, email, phone, issue, brief, details }]);
+      .insert([{ name, email, phone, details }]);
 
     // Detect language
-    const langCode = franc(`${brief} ${details}`);
+    const langCode = franc(`${details}`);
     const isFrench = langCode === "fra";
 
     // Resend client

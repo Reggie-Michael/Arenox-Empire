@@ -1,9 +1,16 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
+  }
+}
 
 const GA_MEASUREMENT_ID = "G-C6LHQKCJTM";
 
-export default function Analytics() {
+export default function Analytics(): null {
   const location = useLocation();
 
   // Load GA script once on mount
@@ -16,8 +23,10 @@ export default function Analytics() {
     document.head.appendChild(script);
 
     window.dataLayer = window.dataLayer || [];
-    function gtag(...args) {
-      window.dataLayer.push(args);
+    function gtag(...args: unknown[]): void {
+      if (window.dataLayer) {
+        window.dataLayer.push(args);
+      }
     }
     window.gtag = gtag;
 
