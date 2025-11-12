@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
 export function useAutoLang() {
-  const [lang, setLang] = useState(() => {
+  const [lang, setLang] = useState<"en" | "fr">(() => {
     // 1. Check localStorage first
     const saved = localStorage.getItem("useLang");
-    if (saved) return saved;
+    if (saved) return saved as "en" | "fr";
 
     // 2. Detect browser language
     const browserLang = navigator.language || navigator.languages?.[0] || "en";
