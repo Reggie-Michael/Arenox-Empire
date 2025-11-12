@@ -9,17 +9,19 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <GeoRedirect>
-              <App />
-            </GeoRedirect>
-          }
-        />
-        <Route path="/us" element={<USLanding />} />
-      </Routes>
+      <div>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <GeoRedirect>
+                <App />
+              </GeoRedirect>
+            }
+          />
+          <Route path="/us" element={<USLanding />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   </StrictMode>
 );
