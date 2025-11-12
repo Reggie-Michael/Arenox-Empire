@@ -11,6 +11,8 @@ createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <div>
         <Routes>
+          <Route path="/ng" element={<App />} />
+
           <Route
             path="/"
             element={
@@ -20,6 +22,7 @@ createRoot(document.getElementById("root")).render(
             }
           />
           <Route path="/us" element={<USLanding />} />
+          <Route path="/usa" element={<USLanding />} />
         </Routes>
       </div>
     </BrowserRouter>
