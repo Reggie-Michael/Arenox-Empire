@@ -6,7 +6,8 @@ export interface ComponentProps {
 
 export interface HeaderProps extends ComponentProps {
   toggleTheme: () => void;
-  toggleLang: () => void;
+  toggleLang?: () => void;
+  showLangToggle?: boolean;
 }
 
 export interface ProcessStepProps {

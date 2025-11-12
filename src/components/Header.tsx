@@ -7,6 +7,7 @@ const Header: React.FC<HeaderProps> = ({
   toggleTheme,
   lang,
   toggleLang,
+  showLangToggle = true,
 }) => {
   const t = translations[lang];
   return (
@@ -39,12 +40,14 @@ const Header: React.FC<HeaderProps> = ({
           </a>
 
           {/* Language toggle */}
-          <button
-            onClick={toggleLang}
-            className={`px-3 py-2 rounded-lg font-semibold transition-all cursor-pointer text-sm ${isDark ? "bg-gray-800 text-white hover:bg-gray-700" : "bg-gray-100 text-gray-900 hover:bg-gray-200"}`}
-          >
-            {lang === "en" ? "🇫🇷 FR" : "🇬🇧 EN"}
-          </button>
+          {showLangToggle && toggleLang && (
+            <button
+              onClick={toggleLang}
+              className={`px-3 py-2 rounded-lg font-semibold transition-all cursor-pointer text-sm ${isDark ? "bg-gray-800 text-white hover:bg-gray-700" : "bg-gray-100 text-gray-900 hover:bg-gray-200"}`}
+            >
+              {lang === "en" ? "🇫🇷 FR" : "🇬🇧 EN"}
+            </button>
+          )}
 
           {/* Theme toggle */}
           <button
