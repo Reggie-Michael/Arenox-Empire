@@ -7,7 +7,7 @@ const Header: React.FC<HeaderProps> = ({
   toggleTheme,
   lang,
   toggleLang,
-  showLangToggle = true,
+  showLangToggle = false,
 }) => {
   const t = translations[lang];
   return (
